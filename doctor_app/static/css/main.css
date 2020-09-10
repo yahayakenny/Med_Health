@@ -32,7 +32,6 @@ body{
     width: 40%;
     padding: 10px;
     background-color: #225069;
-  
     border:1px solid whitesmoke;
   }
   
@@ -40,7 +39,6 @@ body{
     font-family: 'montserrat';
     color: #fff;
     font-size: 25px !important; 
-  
   }
   
   .navbar-brand {

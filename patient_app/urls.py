@@ -10,6 +10,5 @@ urlpatterns = [
     path('login/',auth_views.LoginView.as_view(template_name = 'patients/login.html'), name='login'),
     path('logout/',auth_views.LogoutView.as_view(template_name = 'patients/logout.html'), name='logout'),
     path('register/', views.register, name='register'),
-    path('dashboard/<int:mypatient_id>', views.patient_detail, name='patient_detail'),
-    
+    path('dashboard/<int:mypatient_id>', views.patient_detail, name='patient_detail')   
 ]

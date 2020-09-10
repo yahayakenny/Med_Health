@@ -38,6 +38,7 @@
   <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
 </div> <br><br>
 
+
   <div>
     <div class="container">
       <div class="row align-items-center">
@@ -69,6 +70,21 @@
   </div>
   <br /><br /><br/>
    
+<p class="text-center">
+  <button
+    class="btn btn-info btn-lg"
+    type="button"
+    data-toggle="collapse"
+    data-target="#collapseExample"
+    aria-expanded="false"
+    aria-controls="collapseExample"
+  >
+    More Information
+  </button>
+</p>
+<br/>
+
+<div class="collapse" id="collapseExample">
   <div class = "text-center container service">
     <h1>Quality Services</h1>
     <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit tenetur. </h4>
@@ -106,59 +122,60 @@
         </div>
     </div>
 </div><br><br>
-
-<p class="text-center">
-  <button
-    class="btn btn-info btn-lg"
-    type="button"
-    data-toggle="collapse"
-    data-target="#collapseExample"
-    aria-expanded="false"
-    aria-controls="collapseExample"
-  >
-    Meet Our Doctors
-  </button>
-</p>
-<br />
-<div class="collapse" id="collapseExample">
-  <h1 class="text-center" style="font-size: 50px">Our Doctors</h1>
-  <h6 class="text-center lead" style="color: white; font-size: 20px">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque inventore
-    consectetur.
-  </h6>
-  <br />
-  <div class="container">
-    <div class="row">
-      {% for doctor in doctors %}
-      <div class="col-md-4">
-        <div class="card">
-          <img src="{{doctor.image.url}}" alt="" style="width: 100%" />
-          <div class="card-body">
-            <h3 class="text-center">{{doctor.name}}</h3>
-            <hr />
-            <h5 class="text-center lead home-text">
-              <strong >{{doctor.specialty}}</strong>
-            </h5>
-
-            <h5 class="text-center">
-              <a href="{% url 'doctor_detail' doctor.id %}"
-                ><input
-                  type="submit"
-                  value="Learn More"
-                  class="btn btn-info btn-lg"
-                  type="button"
-              /></a>
-            </h5>
-          </div>
-        </div>
-        <br /><br />
-      </div>
-      {% endfor %}
-    </div>
-  </div> 
+ 
 </div>
 <br /><br />
+
+<h1 class="text-center" style="font-size: 50px">Search for  Doctors</h1>
+<h6 class="text-center lead" style="color: white; font-size: 20px">
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque inventore
+  consectetur.
+</h6>
+
+<!-- Search Filter form -->
+<div class = "container">
+  <form action="" method="GET">
+    {{doctor_filters.form.as_p}}
+    <input
+    type="submit"
+    name="Submit"
+    class="btn btn-info btn-lg btn-block"
+    type="button"
+  />
+  </form>
 </div>
+<!-- End Search Filter form -->
+
+<br><br>
+<div class="container">
+  <div class="row">
+    {% for doctor in doctors %}
+    <div class="col-md-4">
+      <div class="card">
+        <img src="{{doctor.image.url}}" alt="" style="width: 100%" />
+        <div class="card-body">
+          <h3 class="text-center">{{doctor.name}}</h3>
+          <hr />
+          <h5 class="text-center lead home-text">
+            <strong >{{doctor.specialty}}</strong>
+          </h5>
+
+          <h5 class="text-center">
+            <a href="{% url 'doctor_detail' doctor.id %}"
+              ><input
+                type="submit"
+                value="Learn More"
+                class="btn btn-info btn-lg"
+                type="button"
+            /></a>
+          </h5>
+        </div>
+      </div>
+      <br /><br />
+    </div>
+    {% endfor %}
+  </div>
+</div> 
 
 <div class = "container specialty">
   <h1 class = "  text-center">Specialties</h1>
