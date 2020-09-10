@@ -1,0 +1,33 @@
+{% include 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+    <div class = "container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box-element">
+                    <h3>ID: {{details.id}} </h3>
+                </div><br/>
+                <div class="box-element">
+                    <div class="patient-row">
+                        <div style="flex:2"><strong>Specialty</strong></div>
+                        <div style="flex:2"><strong>Name</strong></div> 
+                        <div style="flex:2"><strong>Complaint</strong></div> 
+                        <div style="flex:1"><strong>Age</strong></div>
+                        <div style="flex:1"><strong>Gender</strong></div>                          
+                    </div>
+                    <div class="patient-row">
+                        <div style="flex:2"><p>{{details.patient_specialty}}</p></div>
+                        <div style="flex:2"><p>{{details.patient_name}}</p></div> 
+                        <div style="flex:2"><p>{{details.patient_complaint}}</p></div>
+                        <div style="flex:1"><p>{{details.patient_age}} yrs</p></div>
+                        <div style="flex:1">
+                            <p class="quantity">{{details.patient_gender}}</p>                          
+                        </div>              
+                    </div>     
+               </div>   
+            </div>
+        </div>
+    </div>  
+{% endblock %}

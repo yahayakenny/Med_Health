@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br>
+ <div class = "body container-fluid container">
+    <div class="container container-fluid top">
+        <h1 class = "text-secondary text-center">Login Here</h1><br>
+    </div>
+    <div class="container container-fluid">
+        <form id = "form" method="POST"> 
+            {% csrf_token %}  
+            {{form | crispy}}
+            <input type="submit" name = "Submit" class="btn btn-info btn-lg btn-block" type="button">
+            <br><br>
+      </form>       
+    </div>
+</div>  
+{% endblock %}

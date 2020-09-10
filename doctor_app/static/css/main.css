@@ -1,0 +1,97 @@
+body{
+    background-color: hsl(0, 0%, 98%);
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: hsl(0, 0%, 30%);
+  }
+  
+  .box-element {
+    box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  .patient-row {
+    display: flex;
+    align-items: flex-stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ececec;
+  }
+  
+  form {
+    margin: 0 auto;
+    width: 40%;
+    padding: 10px;
+    background-color: #225069;
+  
+    border:1px solid whitesmoke;
+  }
+  
+  label{
+    font-family: 'montserrat';
+    color: #fff;
+    font-size: 25px !important; 
+  
+  }
+  
+  .navbar-brand {
+    margin-left: 70px;
+    font-family: 'montserrat';
+  }
+  
+  .navbar-nav li a{
+    font-size: 20px !important; 
+  }
+  
+  .navbar{
+    background-color: #225069 !important;
+    padding: 0px !important;
+  
+  }
+  
+  .home-text {
+    font-family: 'montserrat';
+  }
+  
+  
+  .top-logo {
+    text-align: center;
+    padding-top: 30px;
+    font-family: 'montserrat';
+    height: 200px;
+    
+  }
+  
+  .top-logo  h1{
+    color: #fff;
+    font-size: 50px;
+  }
+  .top-logo  h5{
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  @media (max-width: 767px) {
+    .card {
+      margin: 0 auto;
+      margin-bottom: 40px;
+    }
+  
+    form {
+      margin: 0 auto;
+      width: 100%;
+    }
+  
+    .navbar-brand {
+      margin-left: -12px;
+    }
+  }
+  

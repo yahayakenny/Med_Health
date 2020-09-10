@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class = "bg-info top-logo">
+  <h1>Dashboard</h1>
+  <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+</div>
+<div class="container">
+  <br>
+  <div class = "container">
+    <h3>Full Name: <span class = "lead">{{user.last_name |title }} {{user.first_name |title }}</span> </h3>
+    <h3> User Name: <span class = "lead">{{user.username |title }}</span></h3>
+    <h3> Email Address: <span class = "lead">{{user.email}}</span></h3>
+  </div>
+  <br />
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box-element">
+          <h3>Total Appointments: {{patients.count}}</h3>
+        </div>
+        <br />
+  
+        <div class="box-element">
+          <div class="patient-row">
+            <div style="flex: 2"><strong>Patient ID</strong></div>
+            <div style="flex: 2"><strong>Specialty</strong></div>
+            <div style="flex: 2"><strong>Complaint</strong></div>
+            <div style="flex: 1"><strong>Age</strong></div>
+            <div style="flex: 1"><strong>Gender</strong></div>
+            <div style="flex: 1"><strong>Update</strong></div>
+            <div style="flex: 1"><strong>Delete</strong></div>
+          </div>
+          {% for patient in patients %}
+          <div class="patient-row">
+            <div style="flex: 2"><p>{{patient.id}}</p></div>
+            <div style="flex: 2"><p>{{patient.patient_specialty}}</p></div>
+            <div style="flex: 2"><p>{{patient.patient_complaint}}</p></div>
+            <div style="flex: 1"><p>{{patient.patient_age}} yrs</p></div>
+            <div style="flex: 1">
+              <p class="quantity">{{patient.patient_gender}}</p>
+            </div>
+           
+            <div style="flex: 1">
+              <a href="{% url 'patient_update' patient.id %}">
+                  <input
+                  type="submit"
+                  value="Update"
+                  class="btn btn-info"
+                  type="button"
+                />
+              </a> 
+            </div>
+  
+            <div style="flex: 1">
+              <form action="/delete/{{patient.id}}" method="POST">
+                {% csrf_token %}
+                <input
+                  type="submit"
+                  value="Delete"
+                  class="btn btn-info"
+                  type="button"
+                />
+              </form>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+{% endblock %}
