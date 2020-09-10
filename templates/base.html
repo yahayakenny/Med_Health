@@ -46,10 +46,7 @@
             {% if user.is_authenticated %}
               <li class="nav-item active">
                 <a class="nav-link active" href="">Hello {{user.username | title}}, <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link" href="{% url 'welcome'%}">Welcome</a>
-              </li>           
+              </li>          
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'home' %}">Home</a>
               </li>
@@ -64,7 +61,7 @@
               </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'welcome'%}">Welcome</a>
+              <a class="nav-link" href="{% url 'home'%}"> Home </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'login'%}">Login</a>
@@ -84,9 +81,7 @@
     {% endif%}
     </div>
   
-
     {% block content %}
-
     {% endblock %}
 
     <script
@@ -109,7 +104,6 @@
   <script>
     AOS.init();
   </script>
-
 
 </body>
 </html>
