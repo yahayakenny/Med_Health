@@ -4,4 +4,5 @@ from doctor_app import views
 urlpatterns = [ 
     path('', views.home, name = 'home'),
     path('<int:doctor_id>', views.doctor_detail, name='doctor_detail'),
+    path('map/', views.map, name = 'map' )
 ]

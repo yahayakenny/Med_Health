@@ -57,6 +57,9 @@
                 <a class="nav-link" href="{% url 'dashboard'%}">Dashboard</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="{% url 'map'%}">Find Us</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="{% url 'logout'%}">Logout</a>
               </li>
             {% else %}
@@ -104,6 +107,30 @@
   <script>
     AOS.init();
   </script>
+   
+
+  <!-- Google map -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLiS48tHIQg-OWFRHTQnOiDA_R3owT42E&callback=initMap">
+  </script>
+
+  <script>
+    function initMap() {
+        var dumbo = {lat: 6.5244, lng:  3.3792};
+        var mapOptions = {
+            center: dumbo,
+            zoom: 10
+        };
+        var googlemap = new google.maps.Map(document.getElementById("map"), mapOptions);
+    }
+
+    var googlemap = new google.maps.Map(document.getElementById("map"), mapOptions);
+            var marker = new google.maps.Marker({
+                position: siliconValley,
+                map: googlemap
+            });
+</script>
+
 
 </body>
 </html>
