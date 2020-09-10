@@ -11,7 +11,7 @@
           <img src="{% static 'images/hero.png'%}" alt="" style="width: 100%" />
         </div><br>
       </div>
-      <div class="col-lg-5 col-xs-12 col-md-7">
+      <div class="col-lg-5 col-xs-12 col-md-5">
         <div>
           <div data-aos="fade-left" data-aos-duration="2000" class = "home">
             <h5>Welcome to Med Health,</h5>
@@ -21,7 +21,11 @@
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
               ipsum suspendisse ultrices gravida.Risus cmodo viverra
             </p>
-            <a class="btn btn-info btn-lg" href="{% url 'register' %}" role="button">Register Now</a>
+            {% if user.is_authenticated%}
+              <a class="btn btn-info btn-lg" href="{% url 'book' %}" role="button">Book Appointment</a>
+            {% else %}
+              <a class="btn btn-info btn-lg" href="{% url 'register' %}" role="button">Register</a>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -45,13 +49,6 @@
               <li>incididunt ut labore et dolore</li>
               <li>Lorem ipsum dolor sit amet</li>
             </ul>
-            <a href=""
-              ><input
-                type="submit"
-                value="About Us"
-                class="btn btn-info btn-lg"
-                type="button"
-            /></a>
           </div><br><br>
         </div>
         <div class="col-xs-6 col-lg-6">
@@ -79,7 +76,7 @@
   <div class="container">
     <div class="row">
         <div class="col-lg-4 col-md-6">
-          <div class="card" style="width: 22rem; height: 18rem"><br>
+          <div class="card"><br>
             <i class="fa fa-user-md text-center" aria-hidden="true" style = "color: teal"></i><br>
             <div class="card-body text-center">
               <h5 class="card-title ">Search Doctor</h5>
@@ -88,7 +85,7 @@
           </div>    
         </div>
         <div class="col-lg-4 col-md-6">
-          <div class="card" style="width: 22rem; height: 18rem"><br>
+          <div class="card"><br>
             <i class="fa fa-user-circle text-center" aria-hidden="true"></i><br>
             <div class="card-body text-center">
               <h5 class="card-title ">Patient Centered</h5>
@@ -98,7 +95,7 @@
         </div>
 
         <div class="col-lg-4 col-md-6">
-          <div class="card" style="width: 22rem; height: 18rem"><br>
+          <div class="card"><br>
             <i class="fa fa-ambulance text-center" aria-hidden="true" style = "color: orangered"></i><br>
             <div class="card-body text-center">
               <h5 class="card-title">Emergency Services</h5>
@@ -118,12 +115,12 @@
     aria-expanded="false"
     aria-controls="collapseExample"
   >
-    More Information
+    Meet Our Doctors
   </button>
 </p>
 <br />
 <div class="collapse" id="collapseExample">
-  <h1 class="text-center" style="font-size: 50px">Meet Our Doctors</h1>
+  <h1 class="text-center" style="font-size: 50px">Our Doctors</h1>
   <h6 class="text-center lead" style="color: white; font-size: 20px">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque inventore
     consectetur.
@@ -133,7 +130,7 @@
     <div class="row">
       {% for doctor in doctors %}
       <div class="col-md-4">
-        <div class="card" style="width: 22rem">
+        <div class="card">
           <img src="{{doctor.image.url}}" alt="" style="width: 100%" />
           <div class="card-body">
             <h3 class="text-center">{{doctor.name}}</h3>
@@ -170,7 +167,7 @@
 <div class="container">
   <div class="row">
       <div class="col-lg-2 col-md-2">
-        <div class="card" style="width: 9rem; height: 6rem">
+        <div class="card" >
           <div class = "text-center">
             <img src="{% static 'images/child.png' %}" alt="" style = "width: 20%" >
           </div>
@@ -180,7 +177,7 @@
         </div>    
       </div>
       <div class="col-lg-2 col-md-2">
-        <div class="card" style="width: 9rem; height: 6rem">
+        <div class="card" >
           <div class = "text-center">
             <img src="{% static 'images/surgery.png' %}" alt="" style = "width: 20%" >
           </div>
@@ -191,7 +188,7 @@
       </div>
 
       <div class="col-lg-2 col-md-2">
-        <div class="card" style="width: 9rem; height: 6rem">
+        <div class="card" >
           <div class = "text-center">
             <img src="{% static 'images/med.png' %}" alt="" style = "width: 20%" >
           </div>
@@ -201,7 +198,7 @@
         </div>   
       </div>
       <div class="col-lg-2 col-md-2">
-        <div class="card" style="width: 9rem; height: 6rem">
+        <div class="card" >
           <div class = "text-center">
             <img src="{% static 'images/obs.png' %}" alt="" style = "width: 20%" >
           </div>
@@ -211,7 +208,7 @@
         </div>   
       </div>
       <div class="col-lg-2 col-md-2">
-        <div class="card" style="width: 9rem; height: 6rem">
+        <div class="card" >
           <div class = "text-center">
             <img src="{% static 'images/tooth.png' %}" alt="" style = "width: 20%" >
           </div>
@@ -221,7 +218,7 @@
         </div>   
       </div>
       <div class="col-lg-2 col-md-2">
-        <div class="card" style="width: 9rem; height: 6rem">
+        <div class="card" >
           <div class = "text-center">
             <img src="{% static 'images/uro.jpg' %}" alt="" style = "width: 20%" >
           </div>
