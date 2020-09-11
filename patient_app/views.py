@@ -3,7 +3,9 @@ from patient_app.models import BookDoctor, Profile
 from patient_app.forms import BookDoctorForm
 from patient_app.forms import UserForm
 from django.contrib import messages
+from doctor_app.models import Specialty
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 
 # Create your views here.
 @login_required
@@ -15,12 +17,25 @@ def dashboard(request):
 @login_required
 def book_appointment(request):
     form = BookDoctorForm()
+    patients = BookDoctor.objects.all()
+    specialty = Specialty.objects.all()
     if request.method == 'POST':
         form = BookDoctorForm(request.POST or None)
         if form.is_valid():
             form.save()
             return redirect('dashboard')
-    context = {'form': form}
+
+    
+    # send_mail(
+    #     'New Patient appointment',
+    #     'You have a new appointment with a patient, sign into admin panel for more info',
+    #     'yahayakehinde911@gmail.com',
+    #     ['y.hkehinde@yahoo.com'],
+    #     fail_silently=False
+
+    # )
+
+    context = {'form': form, 'specialty': specialty, 'patients': patients}
     return render(request, 'patients/book_apt.html', context)
 
 @login_required
