@@ -6,6 +6,7 @@ urlpatterns = [
     path('', views.home, name = 'home'),
     path('<int:doctor_id>', views.doctor_detail, name='doctor_detail'),
     path('map/', views.map, name = 'map' ),
+    
     path('reset_password/', auth_views.PasswordResetView.as_view(template_name = "patients/reset_password.html"), name ='reset_password'),
 
     path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name = "patients/password_reset_sent.html"), name ='password_reset_done'),
