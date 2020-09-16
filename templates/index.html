@@ -1,75 +1,173 @@
-{% extends 'base.html' %} 
-{% load static %}
-
-{% block content %}
-<br><br>
-<section >
+{% extends 'base.html' %} {% load static %} {% block content %} <br /><br />
+<section>
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-7 col-xs-12 col-md-7">
         <div data-aos="zoom-in" data-aos-duration="2000">
           <img src="{% static 'images/hero.png'%}" alt="" style="width: 100%" />
-        </div><br>
+        </div>
+        <br />
       </div>
       <div class="col-lg-5 col-xs-12 col-md-5">
         <div>
-          <div data-aos="fade-left" data-aos-duration="2000" class = "home">
+          <div data-aos="fade-left" data-aos-duration="2000" class="home">
             <h5>Welcome to Med Health,</h5>
-            <h1 style = "font-size: 50px">Your one stop Family Hospital.</h1>
-            <p class = "home-text">
+            <h1 style="font-size: 50px">Your one stop Family Hospital.</h1>
+            <p class="home-text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
               ipsum suspendisse ultrices gravida.Risus cmodo viverra
             </p>
             {% if user.is_authenticated%}
-              <a class="btn btn-info btn-lg" href="{% url 'book' %}" role="button">Book Appointment</a>
+            <a class="btn btn-info btn-lg" href="{% url 'book' %}" role="button"
+              >Book Appointment</a
+            >
             {% else %}
-              <a class="btn btn-info btn-lg" href="{% url 'register' %}" role="button">Register</a>
+            <a
+              class="btn btn-info btn-lg"
+              href="{% url 'register' %}"
+              role="button"
+              >Register</a
+            >
             {% endif %}
           </div>
         </div>
       </div>
     </div>
   </div>
-</section><br><br>
+</section>
+<br /><br />
 
-<div class = "bg-info top-logo">
+<div class="bg-info top-logo">
   <h1>Home Page</h1>
   <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-</div> <br><br>
+</div>
+<br /><br />
 
+<div class="container specialty">
+  <h1 class="text-center">Specialties</h1>
+  <h4 class="text-center">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+  </h4>
+</div>
+<br /><br />
 
-  <div>
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-xl-6 col-lg-6">
-          <div data-aos="fade-left" data-aos-duration="3000">
-            <h1>Welcome <br />to our Ultra modern Clinic.</h1>
-            <h3 class = "lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam itaque sunt, asperiores dolore minima minus ab tempora ea, veritatis esse alias eveniet dignissimos error unde saepe eum nemo eaque expedita?</h3>
-            <ul class = "home-text">
-              <li>Lorem ipsum dolor sit amet</li>
-              <li>incididunt ut labore et dolore</li>
-              <li>Lorem ipsum dolor sit amet</li>
-            </ul>
-          </div><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2 col-md-2">
+      <div class="card">
+        <div class="text-center">
+          <img
+            src="{% static 'images/child.png' %}"
+            alt=""
+            style="width: 20%"
+          />
         </div>
-        <div class="col-xs-6 col-lg-6">
-          <div>
-            <div data-aos="fade-down" data-aos-duration="3000">
-              <img
-                src= "{% static 'images/hero1.png' %}"
-                alt=""
-                style = "width: 100%"
-              />
-            </div>
-          </div>
-          <br />
+        <div class="card-body text-center">
+          <h5 class="card-title">Pediatrics</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2 col-md-2">
+      <div class="card">
+        <div class="text-center">
+          <img
+            src="{% static 'images/surgery.png' %}"
+            alt=""
+            style="width: 20%"
+          />
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">Surgery</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-2 col-md-2">
+      <div class="card">
+        <div class="text-center">
+          <img src="{% static 'images/med.png' %}" alt="" style="width: 20%" />
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">Medicine</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2 col-md-2">
+      <div class="card">
+        <div class="text-center">
+          <img src="{% static 'images/obs.png' %}" alt="" style="width: 20%" />
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">Obstetrics</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2 col-md-2">
+      <div class="card">
+        <div class="text-center">
+          <img
+            src="{% static 'images/tooth.png' %}"
+            alt=""
+            style="width: 20%"
+          />
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">Dentistry</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2 col-md-2">
+      <div class="card">
+        <div class="text-center">
+          <img src="{% static 'images/uro.jpg' %}" alt="" style="width: 20%" />
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title">Urology</h5>
         </div>
       </div>
     </div>
   </div>
-  <br /><br /><br/>
-   
+</div>
+<br /><br /><br /><br /><br />
+
+<div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-xl-6 col-lg-6">
+        <div>
+          <h1>Welcome <br />to our Ultra modern Clinic.</h1>
+          <h3 class="lead">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+            itaque sunt, asperiores dolore minima minus ab tempora ea, veritatis
+            esse alias eveniet dignissimos error unde saepe eum nemo eaque
+            expedita?
+          </h3>
+          <ul class="home-text">
+            <li>Lorem ipsum dolor sit amet</li>
+            <li>incididunt ut labore et dolore</li>
+            <li>Lorem ipsum dolor sit amet</li>
+          </ul>
+        </div>
+        <br /><br />
+      </div>
+      <div class="col-xs-6 col-lg-6">
+        <div>
+          <div data-aos="fade-down" data-aos-duration="3000">
+            <img
+              src="{% static 'images/hero1.png' %}"
+              alt=""
+              style="width: 100%"
+            />
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+<br /><br /><br />
+
 <p class="text-center">
   <button
     class="btn btn-info btn-lg"
@@ -82,71 +180,94 @@
     More Information
   </button>
 </p>
-<br/>
+<br />
 
 <div class="collapse" id="collapseExample">
-  <div class = "text-center container service">
+  <div class="text-center container service">
     <h1>Quality Services</h1>
-    <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit tenetur. </h4>
-  </div><br>
+    <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit tenetur.</h4>
+  </div>
+  <br /><br>
 
   <div class="container">
     <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <div class="card"><br>
-            <i class="fa fa-user-md text-center" aria-hidden="true" style = "color: teal"></i><br>
-            <div class="card-body text-center">
-              <h5 class="card-title ">Search Doctor</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p> 
-            </div>
-          </div>    
+      <div class="col-lg-4 col-md-6">
+        <div class="card">
+          <br />
+          <i
+            class="fa fa-user-md text-center"
+            aria-hidden="true"
+            style="color: teal"
+          ></i
+          ><br />
+          <div class="card-body text-center">
+            <h5 class="card-title">Search Doctor</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt.
+            </p>
+          </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="card"><br>
-            <i class="fa fa-user-circle text-center" aria-hidden="true"></i><br>
-            <div class="card-body text-center">
-              <h5 class="card-title ">Patient Centered</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p> 
-            </div>
-          </div>    
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="card">
+          <br />
+          <i class="fa fa-user-circle text-center" aria-hidden="true"></i><br />
+          <div class="card-body text-center">
+            <h5 class="card-title">Patient Centered</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt.
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div class="col-lg-4 col-md-6">
-          <div class="card"><br>
-            <i class="fa fa-ambulance text-center" aria-hidden="true" style = "color: orangered"></i><br>
-            <div class="card-body text-center">
-              <h5 class="card-title">Emergency Services</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p> 
-            </div>
-          </div>    
+      <div class="col-lg-4 col-md-6">
+        <div class="card">
+          <br />
+          <i
+            class="fa fa-ambulance text-center"
+            aria-hidden="true"
+            style="color: orangered"
+          ></i
+          ><br />
+          <div class="card-body text-center">
+            <h5 class="card-title">Emergency Services</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt.
+            </p>
+          </div>
         </div>
+      </div>
     </div>
-</div><br><br>
- 
+  </div>
+  <br /><br />
 </div>
 <br /><br />
 
-<h1 class="text-center" style="font-size: 50px">Search for  Doctors</h1>
+<h1 class="text-center" style="font-size: 50px">Search for Doctors</h1>
 <h6 class="text-center lead" style="color: white; font-size: 20px">
   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque inventore
   consectetur.
 </h6>
 
 <!-- Search Filter form -->
-<div class = "container">
+<div class="container">
   <form action="" method="GET">
     {{doctor_filters.form.as_p}}
     <input
-    type="submit"
-    name="Submit"
-    class="btn btn-info btn-lg btn-block"
-    type="button"
-  />
+      type="submit"
+      name="Submit"
+      class="btn btn-info btn-lg btn-block"
+      type="button"
+    />
   </form>
 </div>
 <!-- End Search Filter form -->
 
-<br><br>
+<br /><br />
 <div class="container">
   <div class="row">
     {% for doctor in doctors %}
@@ -157,7 +278,7 @@
           <h3 class="text-center">{{doctor.name}}</h3>
           <hr />
           <h5 class="text-center lead home-text">
-            <strong >{{doctor.specialty}}</strong>
+            <strong>{{doctor.specialty}}</strong>
           </h5>
 
           <h5 class="text-center">
@@ -175,84 +296,11 @@
     </div>
     {% endfor %}
   </div>
-</div> 
-
-<div class = "container specialty">
-  <h1 class = "  text-center">Specialties</h1>
-  <h4 class = "text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. </h4>
-</div><br>
-
-<div class="container">
-  <div class="row">
-      <div class="col-lg-2 col-md-2">
-        <div class="card" >
-          <div class = "text-center">
-            <img src="{% static 'images/child.png' %}" alt="" style = "width: 20%" >
-          </div>
-          <div class="card-body text-center">
-            <h5 class="card-title ">Pediatrics</h5>   
-          </div>
-        </div>    
-      </div>
-      <div class="col-lg-2 col-md-2">
-        <div class="card" >
-          <div class = "text-center">
-            <img src="{% static 'images/surgery.png' %}" alt="" style = "width: 20%" >
-          </div>
-          <div class="card-body text-center">
-            <h5 class="card-title ">Surgery</h5>   
-          </div>
-        </div>     
-      </div>
-
-      <div class="col-lg-2 col-md-2">
-        <div class="card" >
-          <div class = "text-center">
-            <img src="{% static 'images/med.png' %}" alt="" style = "width: 20%" >
-          </div>
-          <div class="card-body text-center">
-            <h5 class="card-title ">Medicine</h5>   
-          </div>
-        </div>   
-      </div>
-      <div class="col-lg-2 col-md-2">
-        <div class="card" >
-          <div class = "text-center">
-            <img src="{% static 'images/obs.png' %}" alt="" style = "width: 20%" >
-          </div>
-          <div class="card-body text-center">
-            <h5 class="card-title ">Obstetrics</h5>   
-          </div>
-        </div>   
-      </div>
-      <div class="col-lg-2 col-md-2">
-        <div class="card" >
-          <div class = "text-center">
-            <img src="{% static 'images/tooth.png' %}" alt="" style = "width: 20%" >
-          </div>
-          <div class="card-body text-center">
-            <h5 class="card-title ">Dentistry</h5>   
-          </div>
-        </div>   
-      </div>
-      <div class="col-lg-2 col-md-2">
-        <div class="card" >
-          <div class = "text-center">
-            <img src="{% static 'images/uro.jpg' %}" alt="" style = "width: 20%" >
-          </div>
-          <div class="card-body text-center">
-            <h5 class="card-title ">Urology</h5>   
-          </div>
-        </div>   
-      </div>
-  </div>
 </div>
-<br><br><br><br><br>
 
 <section
-class="bg-info"
-style="width: 100%; height: 80px; color: white !important"
+  class="bg-info"
+  style="width: 100%; height: 80px; color: white !important"
 ></section>
-  
 
 {% endblock %}

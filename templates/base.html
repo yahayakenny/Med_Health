@@ -37,7 +37,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-info"> 
-        <a class="nav-link" href=""><h1 class="navbar-brand" style = "font-size: 30px">Med Health</h1></a>
+        <a class="nav-link" href=""><h1 class="navbar-brand" style = "font-size: 25px">Med Health</h1></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -48,29 +48,29 @@
                 <a class="nav-link active" href="">Hello {{user.username | title}}, <span class="sr-only">(current)</span></a>
               </li>          
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}">Home</a>
+                <a class="nav-link" href="{% url 'home' %}">HOME</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'book'%}">Book</a>
+                <a class="nav-link" href="{% url 'book'%}">BOOK</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'dashboard'%}">Dashboard</a>
+                <a class="nav-link" href="{% url 'dashboard'%}">DASHBOARD</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'map'%}">Find Us</a>
+                <a class="nav-link" href="{% url 'map'%}">FIND US</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout'%}">Logout</a>
+                <a class="nav-link" href="{% url 'logout'%}">LOGOUT</a>
               </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'home'%}"> Home </a>
+              <a class="nav-link" href="{% url 'home'%}"> HOME </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'login'%}">Login</a>
+              <a class="nav-link" href="{% url 'login'%}">LOGIN</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'register'%}">Register</a>
+              <a class="nav-link" href="{% url 'register'%}">REGISTER</a>
             </li>
             {% endif %} 
           </ul>
