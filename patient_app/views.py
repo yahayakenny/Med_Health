@@ -14,6 +14,7 @@ def dashboard(request):
     profile = Profile.objects.all()
     return render(request, 'patients/dashboard.html', {'profile': profile, 'patients': patients})
 
+
 @login_required
 def book_appointment(request):
     form = BookDoctorForm()
@@ -22,27 +23,32 @@ def book_appointment(request):
     if request.method == 'POST':
         form = BookDoctorForm(request.POST or None)
         if form.is_valid():
+            get_email = form.cleaned_data.get('patient_specialty') 
+            doctor_email = get_email.email
+            get_complaint = form.cleaned_data.get('patient_complaint')
+        
+            send_mail(
+                'New Patient Appointment',
+                'You have a new appointment with a patient who has the following complaints ' +  get_complaint +  ' .Sign into Admin panel for more information',
+                'yahayakehinde911@gmail.com',
+                [
+                    doctor_email, 'yahayahassantaiwo@gmail.com', 
+                ], fail_silently= False
+            )
+        
             form.save()
             return redirect('dashboard')
 
-    
-    # send_mail(
-    #     'New Patient appointment',
-    #     'You have a new appointment with a patient, sign into admin panel for more info',
-    #     'yahayakehinde911@gmail.com',
-    #     ['y.hkehinde@yahoo.com'],
-    #     fail_silently=False
-
-    # )
-
     context = {'form': form, 'specialty': specialty, 'patients': patients}
     return render(request, 'patients/book_apt.html', context)
+
 
 @login_required
 def delete(request, patient_id):
     patient_delete = BookDoctor.objects.get(id = patient_id)
     patient_delete.delete()
     return redirect('dashboard')
+
 
 @login_required
 def update(request, patient_id):
@@ -70,6 +76,7 @@ def register(request):
         form = UserForm()
         
     return render(request, 'patients/register.html', {'form': form})
+
 
 @login_required
 def patient_detail(request, mypatient_id):
