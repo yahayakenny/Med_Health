@@ -7,6 +7,7 @@ from doctor_app.models import Specialty
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 
+
 # Create your views here.
 @login_required
 def dashboard(request):
@@ -29,10 +30,10 @@ def book_appointment(request):
         
             send_mail(
                 'New Patient Appointment',
-                'You have a new appointment with a patient who has the following complaints ' +  get_complaint +  ' .Sign into Admin panel for more information',
+                'You have a new appointment with a patient who has the following complaints: ' +  get_complaint +  '. Sign into Admin panel for more information',
                 'yahayakehinde911@gmail.com',
                 [
-                    doctor_email, 'yahayahassantaiwo@gmail.com', 
+                   doctor_email,
                 ], fail_silently= False
             )
         
@@ -41,6 +42,7 @@ def book_appointment(request):
 
     context = {'form': form, 'specialty': specialty, 'patients': patients}
     return render(request, 'patients/book_apt.html', context)
+
 
 
 @login_required
@@ -82,3 +84,5 @@ def register(request):
 def patient_detail(request, mypatient_id):
     details = BookDoctor.objects.get(id = mypatient_id)
     return render(request, 'patients/patient_detail.html', {'details': details})
+
+
