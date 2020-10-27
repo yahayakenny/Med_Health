@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%cj4lr$-y&c+4-+0mg43+=7^ms5wwbguu)8)@4=#%m2+pj)o^8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['med-health-django.herokuapp.com', '127.0.0.1']
 
 
 INSTALLED_APPS = [
