@@ -1,23 +1,25 @@
-{% extends 'base.html' %} {% block content %} <br/><br/><br/>
+{% extends 'base.html' %} {% block content %} <br/>
 <div class="container" style="margin-top: 40px">
   <div class="row">
-    <div class="col-md-5 col-xs-12 col-sm-12 col-lg-5">
-      <img src="{{details.image.url}}" alt="" style="width: 100%" />
-      <h3 class="text-center">{{details.name}}</h3>
-      <h6 class="text-center lead">{{details.qualifications}}</h6>
-      <h6 class="text-center">
+    <div class="col-md-5 col-xs-12 col-sm-12 col-lg-5 shadow-lg p-3 mb-5 bg-white rounded">
+    <img src="{{details.image.url}}" alt="" style="width: 100%" />
+    
+      <h3 class="text-center" style = "color: black">{{details.name}}</h3>
+      <h6 class="text-center lead" style = "color: black">{{details.qualifications}}</h6>
+      <h6 class="text-center" style = "color: black">
         Email: <span class="lead">{{details.email}}</span>
       </h6>
-      <h6 class="text-center">
+      <h6 class="text-center" style = "color: black">
         Phone: <span class="lead">{{details.phone}}</span>
       </h6>
+    
     </div>
     <div class="col-md-7 col-xs-12 col-sm-7 col-lg-7">
-      <div class="jumbotron">
-        <h5>Specialty: <span class="lead">{{details.specialty}}</span></h5>
-        <h5>Work: <span class="lead">{{details.university}}</span></h5>
-        <h5>Biodata:</h5>
-        <h5 class="lead">{{details.information}}</h5>
+      <div class="shadow-lg p-3 mb-5 bg-white rounded">
+        <h5 style = "color: black">Specialty: <span class="lead">{{details.specialty}}</span></h5>
+        <h5 style = "color: black">Work: <span class="lead">{{details.university}}</span></h5>
+        <h5 style = "color: black">Biodata:</h5>
+        <h5 class="lead" style = "color: black">{{details.information}}</h5>
       </div>
     </div>
   </div>

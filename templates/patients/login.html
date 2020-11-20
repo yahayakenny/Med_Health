@@ -1,23 +1,35 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{%load static%}
 
 {% block content %}
-<br>
- <div class = "body container-fluid container">
-    <div class="container container-fluid top">
-        <h1 class = "text-secondary text-center">Login Here</h1><br>
-    </div>
-    <div class="container container-fluid">
-        <form id = "form" method="POST"> 
-            {% csrf_token %}  
-            {{form | crispy}}
-            <input type="submit" name = "Submit" class="btn btn-info btn-lg btn-block" type="button">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="container">
+                <img src="{% static 'images/login-img2.jpg' %}" alt="" style = "width:100%">
+            </div>  
+        </div>
+        <div class="col-md-4 shadow-lg p-3 mb-5 bg-white rounded">
+            <h1 class = "text-center">LOGIN</h1>
             <br>
-            <h5 style = "color: white">Don't have an account yet?</h5>
-            <a style = "color: white;font-size: 13px" href="{% url 'register'%}">Register here</a>
-            <br><br> <h5 style = "color: white">Forgot password?</h5>
-            <a style = "color: white;font-size: 13px" href="{% url 'reset_password'%}">Reset it here</a>
-      </form>       
+            <div class="container d-flex align-items-center ">
+              
+                <form id = "form" method="POST"> 
+                    {% csrf_token %}  
+                    {{form | crispy}}
+                    <br>
+                    <input type="submit" name = "Submit" class="btn btn-dark btn-lg btn-block" type="button">
+                    <br>
+                    <h5 style = "color:black" >Don't have an account yet?</h5>
+                    <a style = "font-size: 13px" href="{% url 'register'%}">Register here</a>
+                    <br><br><h5 style = "color:black" >Forgot password?</h5>
+                    <a style = "font-size: 13px" href="{% url 'reset_password'%}">Reset it here</a>
+              </form> 
+            </div>
+        </div>
     </div>
-</div>  
+</div>
+
 {% endblock %}

@@ -1,19 +1,22 @@
 {% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
-<br />
-<h1 class="text-center">Register With Us</h1>
-<br />
-
-<div class="container">
-  <form method="POST">
-    {% csrf_token %} {{form | crispy}}
-    <input
-      type="submit"
-      name="Submit"
-      class="btn btn-info btn-lg btn-block"
-      type="button"
-    /> <br>
-    <h5 style = "color: white">Already have an account yet?</h5>
-    <a style = "color: white;font-size: 13px" href="{% url 'login'%}">Login here</a>
-  </form>
+<div class="register-background">
+  <div class="container">
+    <br /><br />
+    <div class="register-form shadow-lg p-3 mb-5 bg-white rounded">
+      <h1 class="text-center">Register With Us</h1>
+      
+      <form method="POST">
+        {% csrf_token %} {{form | crispy}}
+        <input
+          type="submit"
+          name="Submit"
+          class="btn btn-info btn-lg btn-block"
+          type="button"
+        /> <br>
+        <h5 style = "color:black">Already have an account?</h5>
+        <a style = "font-size: 13px" href="{% url 'login'%}">Login here</a>
+      </form>
+    </div> 
+  </div>
 </div>
 {% endblock %}

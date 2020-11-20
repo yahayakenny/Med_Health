@@ -1,26 +1,26 @@
 {% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
-
-<div class="bg-info top-logo">
-  <h1>Appointment Page</h1>
-  <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-</div>
 <div class="body container-fluid container">
   <br />
   <div class="container container-fluid top">
     <h1 class="text-secondary text-center">Book An Appointment</h1>
     <br />
   </div>
-  <div class="container container-fluid">
-    <form id="form" method="POST" action="">
-      {% csrf_token %} 
-      {{form | crispy }}
-      <input
-        type="submit"
-        name="Submit"
-        class="btn btn-info btn-lg btn-block"
-        type="button"
-      />
-    </form>
+  <div class="container appointment-form ">
+    <div class = "shadow p-1 mb-4 bg-white rounded">
+      <br />  <br />  
+      <form id="form" method="POST" action="">
+        {% csrf_token %} 
+        {{form | crispy }}
+        <br>
+        <input
+          type="submit"
+          name="Submit"
+          class="btn btn-dark btn-lg btn-block"
+          type="button"
+        />
+      </form>
+      <br />  <br />  <br />
+    </div>
   </div>
 </div>
 {% endblock %}

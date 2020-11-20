@@ -1,9 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class = "bg-info top-logo">
-  <h1>Dashboard</h1>
-  <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-</div>
 <div class="container">
   <br>
   <div class = "container">
@@ -45,11 +41,12 @@
                   <input
                   type="submit"
                   value="Update"
-                  class="btn btn-info"
+                  class="btn btn-success"
                   type="button"
                 />
               </a> 
             </div>
+            <br>
   
             <div style="flex: 1">
               <form action="/delete/{{patient.id}}" method="POST">
@@ -57,7 +54,7 @@
                 <input
                   type="submit"
                   value="Delete"
-                  class="btn btn-info"
+                  class="btn btn-danger"
                   type="button"
                 />
               </form>

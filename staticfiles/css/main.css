@@ -4,8 +4,9 @@ html,body {
 }
 
 body{
-    background-color: hsl(0, 0%, 98%);
+    /* background-color: hsl(0, 0%, 98%); */
     font-family: 'montserrat';
+    background-color: red;
   }
   
   h1,

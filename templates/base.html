@@ -36,7 +36,7 @@
     <title>Med Health</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-info"> 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
         <a class="nav-link" href=""><h1 class="navbar-brand" style = "font-size: 25px">Med Health</h1></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -75,7 +75,6 @@
             {% endif %} 
           </ul>
      </nav>
-    <br><br>
     <div class = "container">
       {% if messages %}
       {% for message in messages%}
@@ -86,6 +85,93 @@
   
     {% block content %}
     {% endblock %}
+
+
+<!-- Footer -->
+<footer class="bg-dark ">
+  <div class="container">
+    <br><br>
+    <div class="row">
+      <div class="col-md-6 ">
+        <div class = "footer-text">
+          <h1>Address</h1>
+          <h6>1401 S Grand Ave, Los Angeles, CA 90015, United States</h6>
+          <h6>Hours: Open 24 hours</h6>
+          <h6>Emergency department: Open 24 hours · More hours</h6>
+          <h5>Phone: +1 213-748-2411</h5>
+        </div>
+      </div>
+    
+      <div class="col-md-2 mx-auto">
+        <br>
+        <ul class="list-unstyled footer-text">
+          <li>
+            <a href="#!">About</a>
+          </li>
+          <li>
+            <a href="#!">Contact</a>
+          </li>
+          <li>
+            <a href="#!">Pharmacy</a>
+          </li>
+          <li>
+            <a href="#!">Laboratory</a>
+          </li>
+        </ul>
+      </div>
+      <hr class="clearfix w-100 d-md-none"> 
+      <div class="col-md-4 mx-auto text-white">
+        <h6>Emergency department: Open 24 hours</h6>
+        <h6>Phone: +1 213-748-2411</h6>
+      </div>
+    </div>
+  </div>
+  <!-- Footer Links -->
+  <hr>
+  <!-- Call to action -->
+  <ul class="list-unstyled list-inline text-center py-2">
+    <li class="list-inline-item">
+      <h5 class="mb-1">Register for free</h5>
+    </li>
+    <li class="list-inline-item">
+      <a href="{% url 'register'%}" class="btn btn-danger btn-rounded">Sign up!</a>
+    </li>
+  </ul>
+  <!-- Call to action -->
+  <hr>
+
+  <!-- Social buttons -->
+  <ul class="list-unstyled list-inline text-center">
+    <li class="list-inline-item">
+      <a class="btn-floating btn-fb mx-1">
+        <i class="fab fa-facebook-f"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-tw mx-1">
+        <i class="fab fa-twitter"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-gplus mx-1">
+        <i class="fab fa-google-plus-g"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-li mx-1">
+        <i class="fab fa-linkedin-in"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-dribbble mx-1">
+        <i class="fab fa-dribbble"> </i>
+      </a>
+    </li>
+  </ul>
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+  </div>
+</footer>
+<!-- Footer -->
 
     <script
     src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

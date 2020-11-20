@@ -4,8 +4,8 @@ html,body {
 }
 
 body{
-    background-color: hsl(0, 0%, 98%);
-    font-family: 'montserrat';
+  background-color: hsl(0, 0%, 98%);
+ 
   }
   
   h1,
@@ -32,18 +32,11 @@ body{
     border-bottom: 1px solid #ececec;
   }
   
-  form {
-    margin: 0 auto;
-    width: 40%;
-    padding: 10px;
-    border:1px solid whitesmoke;
-    background-color: #225069 !important;
-  }
-  
+ 
   label{
     font-family: 'montserrat';
-    color: #fff;
-    font-size: 25px !important; 
+    color: black;
+    font-size: 13px !important; 
   }
   
   .navbar-brand {
@@ -52,17 +45,31 @@ body{
   }
   
   .navbar-nav li a{
-    font-size: 20px !important; 
+    font-size: 15x !important; 
   }
   
   .navbar{
-    background-color: #225069 !important;
-    padding: 10px !important;
+    padding: 0px 0px; 
   
   }
   
   .home-text {
     font-family: 'montserrat';
+  }
+
+  .register-background {
+  background: url('/static/images/home-img.jpg');
+  width: 100% !important;
+  height: 100vh;
+  display: table;
+  position: relative;
+  background-position: center;
+  background-attachment: scroll;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
   }
   
   
@@ -86,12 +93,10 @@ body{
 
   .fa {
     font-size: 80px;
+    
   }
 
-  .card {
-    background-color:  #f8f8f8;
-  }
-
+ 
   .card img {
     margin-top: 10px;
   }
@@ -125,7 +130,66 @@ body{
     height: 100vh;
     background-color: grey;
   }
+
+  input:focus{
+    outline: none;
+  }
  
+  .login-container {
+    padding: 50px;
+  }
+  
+  .register-form {
+    margin: 0 auto;
+    width: 50%;
+    padding: 20px;
+    border:1px solid whitesmoke;
+    color: black;
+  }
+
+  .search-form form{
+    color: black;
+    margin: 0 auto;
+    width: 60%
+
+  }
+
+  .border-right {
+    border-right: 1px solid grey;
+  }
+ 
+  .footer-text h1,h6, h5 {
+    color: white;
+  }
+  .footer-text li a{
+    color: white;
+  }
+
+ .fab {
+    font-size: 28px;
+    color: white;
+  }
+
+  footer {
+   margin-top: 100px;
+  }
+
+  .service:hover {
+    transform: scale(1.1); 
+  }
+
+  .service {
+    transition: transform .2s;
+  }
+
+  .appointment-form form {
+    margin: 0 auto;
+    width: 50%;
+    padding: 20px;
+    color: black;
+  }
+
+
   
   @media (max-width: 767px) {
     .card {
@@ -133,11 +197,13 @@ body{
       margin-bottom: 40px;
     }
   
-    form {
+    .register-form {
       margin: 0 auto;
       width: 100%;
+      padding: 20px;
+      border:1px solid whitesmoke;
     }
-  
+
     .navbar-brand {
       margin-left: -12px;
     }
@@ -147,5 +213,17 @@ body{
     margin: 0 auto;
     font-family: 'montserrat';
   }
+
+  .appointment-form form {
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
+    color: black;
+  }
   }
   
+
+  .hr {
+  border: 1px solid orangered;
+  border-radius: 1px;
+  }
