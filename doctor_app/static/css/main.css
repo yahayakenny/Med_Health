@@ -23,7 +23,7 @@ body{
     border-radius: 4px;
     padding: 10px;
   }
-  
+
   .patient-row {
     display: flex;
     align-items: flex-stretch;
@@ -32,7 +32,6 @@ body{
     border-bottom: 1px solid #ececec;
   }
   
- 
   label{
     font-family: 'montserrat';
     color: black;
@@ -140,8 +139,8 @@ body{
   }
   
   .register-form {
-    margin: 0 auto;
-    width: 50%;
+    
+    width: 100%;
     padding: 20px;
     border:1px solid whitesmoke;
     color: black;
@@ -189,6 +188,9 @@ body{
     color: black;
   }
 
+  form {
+    width: 100%;
+  }
 
   
   @media (max-width: 767px) {
