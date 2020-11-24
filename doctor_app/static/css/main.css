@@ -139,7 +139,6 @@ body{
   }
   
   .register-form {
-    
     width: 100%;
     padding: 20px;
     border:1px solid whitesmoke;
@@ -148,10 +147,25 @@ body{
 
   .search-form form{
     color: black;
-    margin: 0 auto;
-    width: 60%
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
   }
+
+  .search-form input {
+    width: 30%;
+    height: 40px;
+    border-radius: 5px;
+    margin-left: 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+  
+  }
+
+ 
 
   .border-right {
     border-right: 1px solid grey;
